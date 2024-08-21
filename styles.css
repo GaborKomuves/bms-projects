@@ -1,0 +1,80 @@
+/* Ensure the body and html take full height */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Main container for the slider */
+.slider {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Optional: to have a background color for the slider */
+}
+
+/* Individual slides */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Initially hide all slides */
+  transition: opacity 0.5s ease; /* Fade transition effect */
+}
+
+/* Active slide */
+.slide.active {
+  opacity: 1;
+}
+
+/* Image within each slide */
+.slide img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Ensure the entire image is shown */
+}
+
+/* Slide content overlay */
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+  color: #fff;
+  padding: 10px;
+}
+
+/* Dot navigation container */
+.dot-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Dot navigation item */
+.dot-navigation-item {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Active dot */
+.dot-navigation-item.active {
+  background-color: #555;
+}
